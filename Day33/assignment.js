@@ -22,6 +22,7 @@ app.get("/users/:id", (req, res) => {
     res.json(found)
 });
 
-app.get("users/delete/:id", (req, res) => {
-    
+app.get("/user/delete/:id", (req, res) => {
+    const newList = names.filter((guy) => guy.id !== parseInt(req.params.id));
+    res.json(newList)
 })
