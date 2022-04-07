@@ -1,0 +1,8 @@
+<%- include('../components/header.ejs')%>
+    <%- include('../components/footer.ejs')%>
+        <h1 style="color: #cef; background-color: #000"> Hi my name is <%= name%> !</h1>
+        <p> Hello <%= users[3].name%>
+        </p>
+        <% users.map((user)=>{%>
+            <h1> My name is <%= user.name%> and I am <%= user.age%> years old%></h1>
+            <%})%>
