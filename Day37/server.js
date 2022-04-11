@@ -26,7 +26,7 @@ const users = [
     { name: "T~K", age: 20 },
     { name: "Yolve", age: 12 },
     { name: "Edd", age: 32 },
-    { name: "Hudwry", age: 20 }
+    { name: "Kyle", age: 20 }
 ]
 
 const todoList = []
