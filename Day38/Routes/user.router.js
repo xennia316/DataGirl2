@@ -19,6 +19,15 @@ router.post('/login', async (req, res) => {
     res.json(
         isUserFound ? { message: 'user found', user: isUserFound } : { message: "User not found" }
     )
+});
+
+router.put('/update_profile', async(req, res) =>{
+    const {_id} = req.body
+    const updataUser =  await UserModel.findByIdAndUpdate(
+        {_id: _id}, req.body
+    );
+
+    res.send(updataUser)
 })
 
 module.exports = router
