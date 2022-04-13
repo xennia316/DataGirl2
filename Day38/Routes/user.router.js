@@ -21,13 +21,23 @@ router.post('/login', async (req, res) => {
     )
 });
 
-router.put('/update_profile', async(req, res) =>{
-    const {_id} = req.body
-    const updataUser =  await UserModel.findByIdAndUpdate(
-        {_id: _id}, req.body
+router.put('/update_profile', async (req, res) => {
+    const { _id } = req.body
+    const updataUser = await UserModel.findByIdAndUpdate(
+        { _id: _id }, req.body
     );
 
     res.send(updataUser)
 })
+
+router.delete('/delete_user', async (req, res) => {
+    const { id, password } = req.body;
+    const deleteUser = await UserModel.deleteOne({ _id: id, password: password });
+
+    res.send(deleteUser.deletedCount 
+        ? { success: true, user: deleteUser } 
+        : { success: false, message: "Could not delete user" })
+})
+
 
 module.exports = router
