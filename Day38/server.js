@@ -1,6 +1,7 @@
 const express = require('express');
 
 const UserRouter =  require('./Routes/user.router')
+const PostRouter = require('./Routes/post.router')
 
 const mongoose =  require('mongoose');
 
@@ -18,6 +19,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use('/api/user/', UserRouter)
+app.use('/api/user/', UserRouter);
+app.use('/api/post/', PostRouter);
 
 app.listen(5000)
