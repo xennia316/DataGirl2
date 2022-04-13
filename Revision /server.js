@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const User = require('./user')
+const User = require('./user');
+const express = require('express');
 
 const connection = mongoose.connect("mongodb+srv://Sonia:ZENNIA0709@cluster0.hcmtn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 connection.then(() => {
@@ -31,3 +32,17 @@ async function run() {
     }
 }
 run()
+
+const app = express();
+
+app.listen(5000);
+app.use(express.json);
+app.use(express.urlencoded());
+
+app.post('/create_user', async(req, res) =>{
+    const body =   req.body;
+
+    const user = await new User(body);
+    await user.save();
+    console.log(user);
+})
