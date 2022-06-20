@@ -5,9 +5,7 @@ const express = require('express');
 const connection = mongoose.connect("mongodb+srv://Sonia:ZENNIA0709@cluster0.hcmtn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 connection.then(() => {
     console.log("Succesfully connected to database");
-});
-
-connection.catch(() => {
+}).catch(() => {
     console.log("The connection was unsuccessful");
 });
 
