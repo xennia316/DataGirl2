@@ -3,17 +3,17 @@ const express = require('express');
 const nothing = [
     {
         id: 1,
-        name: 'lll',
+        name: 'Eddy',
         age: 12
     },
     {
         id: 2,
-        name: 'mmm',
+        name: 'Sonia',
         age: 14
     },
     {
         id: 3,
-        name: 'dez',
+        name: 'Dez',
         age: 19
     },
 ]
